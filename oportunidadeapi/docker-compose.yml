@@ -1,0 +1,32 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo_oportunidade
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: oportunidadesdb
+    networks:
+      - oportunidade-network
+
+  oportunidade-api:
+    build: .
+    container_name: oportunidade-api
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongo
+    networks:
+      - oportunidade-network
+
+  oportunidade-frontend:
+    build: ../oportunidadeapifront
+    container_name: oportunidade-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - oportunidade-network
+
+networks:
+  oportunidade-network:
+    driver: bridge
