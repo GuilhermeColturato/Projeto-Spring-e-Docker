@@ -4,7 +4,7 @@ function Oportunidades() {
   const [oportunidades, setOportunidades] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/api/oportunidades`)
+    fetch("http://localhost:8080/api/oportunidades")
       .then(response => response.json())
       .then(data => setOportunidades(data))
       .catch(error => console.error("Erro ao buscar dados:", error));
