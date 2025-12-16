@@ -44,6 +44,7 @@ Antes de executar o projeto, é necessário ter instalado:
 ### 1️⃣ Clonar o repositório
 
 git clone https://github.com/GuilhermeColturato/Projeto-Spring-e-Docker.git
+
 cd Projeto-Spring-e-Docker
 
 ### 2️⃣ Gerar o build da aplicação
